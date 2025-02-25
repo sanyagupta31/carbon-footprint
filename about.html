@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Carbon Footprint</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            text-align: center;
+            background-image: url(greenfresh.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        header {
+            background: #28a745;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-family: cursive;
+            font-size: 24px;
+            color: white;
+        }
+
+        .glow-text {
+            font-size: 14px;
+            color: #e0f7fa;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #5cdb80, 0 0 10px #34bc15, 0 0 15px #023910; }
+            100% { text-shadow: 0 0 10px #5bc876, 0 0 15px #2dde23, 0 0 20px #055010; }
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e6c9;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        .about-content {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .about-content h2 {
+            font-size: 28px;
+            color: #28a745;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .about-content ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .about-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #218838;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 20px;
+            }
+
+            .about-content h2 {
+                font-size: 20px;
+                
+            }
+
+            .about-content p {
+                font-size: 10px;
+                
+            }
+            .menu-icon {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background:#28a745;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 10px;
+                text-align: center;
+            }
+            .cta-button{
+                background-color: #333;
+            }
+            .cta-button:hover{
+                background-color: #e0f7fa;
+                color: black;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Carbon Footprint👣</h1>
+            <p class="glow-text">✨ Let's Make Environment Green ✨</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+
+                <li><a href="about.html"><i class="fa-solid fa-seedling"></i>About</a></li>
+                
+                <li><a href="calculator.html"><i class="fa-solid fa-calculator"></i> Calculator</a></li>
+                <li><a href="reccomedation.html"> <i class="fa-solid fa-recycle"></i> Recommedation</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-content">
+        <h2>About Us</h2>
+        <p>Welcome to <strong>Carbon Footprint Calculator</strong>, a platform dedicated to helping individuals and organizations understand and reduce their environmental impact. Our mission is to empower you to make sustainable choices for a greener future.</p>
+
+        <h3>Our Mission</h3>
+        <p>To provide accurate and accessible tools for calculating carbon footprints, raising awareness about climate change, and inspiring actionable steps toward sustainability.</p>
+
+        <h3>Our Vision</h3>
+        <p>A world where every individual and organization takes responsibility for their environmental impact, contributing to a healthier planet for future generations.</p>
+
+        <h3>Why Carbon Footprint Matters</h3>
+        <p>Carbon footprints measure the total greenhouse gas emissions caused by our actions, from energy use to transportation and waste. By understanding and reducing our carbon footprints, we can combat climate change, protect ecosystems, and ensure a sustainable future.</p>
+
+        <h3>How the Calculator Works</h3>
+        <p>Our Carbon Footprint Calculator uses scientifically validated formulas to estimate your emissions based on factors like electricity consumption, transportation, and waste generation. By providing personalized results, we help you identify areas for improvement and take meaningful action.</p>
+
+        <h3>Join Us</h3>
+        <p>Together, we can make a difference. Use our calculator, share your results, and take steps to reduce your carbon footprint. Let's create a greener future for all.</p>
+
+        <a href="calculator.html" class="cta-button">Calculate Your Footprint</a>
+    </div>
+    <footer id="footer" role="contentinfo"style="background-color: #28a745; color: white; padding: 10px 20px; text-align: center;margin-top: 100px;">
+        <p>&copy; 2025 Carbon Footprint. All rights reserved.</p>
+    </footer>
+</body>
+</html>

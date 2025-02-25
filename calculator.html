@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            
+        }
+
+        /* Header */
+        header {
+            background: #28a745;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-family: cursive;
+            font-size: 24px;
+            color: white;
+        }
+
+        .glow-text {
+            font-size: 14px;
+            color: #e0f7fa;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #5cdb80, 0 0 10px #34bc15, 0 0 15px #023910; }
+            100% { text-shadow: 0 0 10px #5bc876, 0 0 15px #2dde23, 0 0 20px #055010; }
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e6c9;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        #myVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Calculator Container */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #e5ede5;
+            
+            text-align: center;
+        }
+
+        .container label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 16px;
+            color: #c4e0c4;
+           
+            font-weight: 800;
+        }
+
+        .container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 12px;
+            background: #0b0d0b;
+            color: rgb(214, 226, 218);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .container button:hover {
+            background: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d5ecda;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background:#28a745;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Carbon Footprint👣</h1>
+            <p class="glow-text">✨ Let's Make Environment Green ✨</p>
+        </div>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-menu">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+
+                <li><a href="about.html"><i class="fa-solid fa-seedling"></i>About</a></li>
+                
+                <li><a href="calculator.html"><i class="fa-solid fa-calculator"></i> Calculator</a></li>
+                <li><a href="reccomedation.html"> <i class="fa-solid fa-recycle"></i> Recommedation</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <video autoplay muted loop id="myVideo">
+        <source src="coal.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h2>Carbon Footprint Calculator</h2>
+        <label for="electricity">Electricity Consumption (kWh):</label>
+        <input type="number" id="electricity" placeholder="Enter kWh used">
+
+        <label for="transport">Transportation (km traveled):</label>
+        <input type="number" id="transport" placeholder="Enter km traveled">
+
+        <label for="waste">Waste Generated (kg):</label>
+        <input type="number" id="waste" placeholder="Enter waste in kg">
+
+        <button onclick="calculateFootprint()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Toggle menu for mobile devices
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Calculate carbon footprint
+        function calculateFootprint() {
+            const electricity = parseFloat(document.getElementById('electricity').value) || 0;
+            const transport = parseFloat(document.getElementById('transport').value) || 0;
+            const waste = parseFloat(document.getElementById('waste').value) || 0;
+
+            const electricityFactor = 0.5; // kg CO2 per kWh
+            const transportFactor = 0.3; // kg CO2 per km
+            const wasteFactor = 0.2; // kg CO2 per kg of waste
+
+            const total = (electricity * electricityFactor) +
+                          (transport * transportFactor) +
+                          (waste * wasteFactor);
+
+            document.getElementById('result').innerText = `Your estimated carbon footprint is ${total.toFixed(2)} kg CO2 per month.
+            To reduce your carbon footprint, please visit the Recommendations page.`;
+        }
+    </script>
+    <footer id="footer" role="contentinfo"style="background-color: #28a745; color: white; padding: 10px 20px; text-align: center;margin-top: 580px;">
+        <p>&copy; 2025 Carbon Footprint. All rights reserved.</p>
+    </footer>
+</body>
+</html>

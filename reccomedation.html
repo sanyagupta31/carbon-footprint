@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommedation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf0;
+            color:#333;
+            text-align:center;
+        }
+        header{
+            background-color: #28a745;
+            padding:10px 20px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top:0;
+            z-index:1000;
+        }
+        .logo{
+            flex-shrink:0;
+        }
+        .logo h1{
+            margin:0;
+            font-family: cursive;
+            font-size:24px;
+            color:white;
+        }
+        .glow-text{
+            font-size:14px;
+            color:#e0f7fa;
+            animation: glow 1.5s infinite alternate;
+        }  
+        @keyframes glow{
+            0% {text-shadow: 0 0 5px #5cdb80, 0 0 10px #34bc15, 0 0 15px #023910;}
+            100% {text-shadow: 0 0 10px #5bc876, 0 0 15px #2dde23, 0 0 20px #055010;}
+        }
+        nav ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+            display:flex;
+            gap:20px;
+        }
+        nav ul li{
+            position:relative;
+        }   
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            transition:color 0.3s ease;
+        }
+        nav ul li a:hover{
+            color:#c8e6c9;
+        }
+        .menu-icon{
+            display:none;
+            font-size:24px;
+            cursor:pointer;
+            color:white;
+        }
+        
+        .reccomedation{
+            padding:50px 20px;
+            background-color: white;
+        }
+        .reccomedation h2{
+            font-size:32px;
+            color:#28a745;
+            margin-bottom:30px;
+        }
+        .cards{
+            display:flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            gap:20px;
+        }
+        .card{
+           background: #fff;
+           border:1px solid #e0e0e0;
+           border-radius:10px;
+           padding:20px;
+           width:300px;
+           box-shadow:0 4px 10px rgba(0,0,0,0.1);
+           transition: transform 0.3s ease,box-shadow 0.3 ease;
+        }
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .card i{
+            font-size: 40px;
+            color:#28a745;
+            margin-bottom:10px;
+        }
+        .card p{
+            font-size: 14px;
+            color:#555;
+        }
+        #myvideo {
+            position: cover;
+            top: 0;
+            left: 0;
+            
+            height: 30vh;
+            object-fit:fill;
+            z-index: -1;
+        }
+        @media (max-width:768px){
+            .menu-icon{
+                display:block;
+            }
+            nav ul{
+                display:none;
+                flex-direction:column;
+                position:absolute;
+                top:60px;
+                left:0;
+                width:100%;
+                background-color:#28a745;
+                padding:10px 0;
+            }
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li{
+                width:100%;
+                text-align:center;
+            }
+            .cards{
+                flex-direction:column;
+                align-items: center;
+            }
+            .card{
+                width:80%;
+            }
+
+        }
+    </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <header>
+        <div class="logo">
+            <h1>Carbon Footprint👣 </h1>
+            <p class="glow-text">✨ Let's Make Environment Green ✨</p>
+        </div>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-menu">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+
+                <li><a href="about.html"><i class="fa-solid fa-seedling"></i>About</a></li>
+                
+                <li><a href="calculator.html"><i class="fa-solid fa-calculator"></i> Calculator</a></li>
+                <li><a href="reccomedation.html"> <i class="fa-solid fa-recycle"></i> Recommedation</a></li>
+                
+                
+                
+               
+            </ul>
+        </nav>
+    </header>
+    <section class="reccomedation">
+        <h2> Tips to Reduce Your Carbon Footprint👣</h2>
+        <div class="cards">
+            <!-- card1 -->
+             <div class="card">
+                <i class="fas fa-bicycle"></i>
+                <h3>Use Public Transport</h3>
+                <p>Opt for buses, trains, or cycling instead of driving to reduce emissions.</p>
+                <video id="video" width="320" height="240" controls>
+                    <source src="video/cycle.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+
+             </div>
+             <!-- card2 -->
+              <div class="card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Switch to LED Bulbs</h3>
+                <p>Replace traditional bulbs with energy-efficient LED lights.</p>
+                <video id="video" width="320" height="240" controls>
+                    <source src="video/bulb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+        </div>
+        <!-- card3 -->
+         <div class="card">
+                <i class="fas fa-recycle"></i>
+                <h3>Recycle Waste</h3>
+                <p>Recycle paper, plastic, and glass to reduce waste and save energy.</p>
+                <video id="video" width="320" height="240" controls>
+                    <source src="video/recycle.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+        </div>
+        <!-- card4 -->
+            <div class="card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Plant Trees</h3>
+                    <p>Plant trees to absorb carbon dioxide and reduce greenhouse gases.</p>  
+                    <video id="video" width="320" height="240" controls>
+                        <source src="video/plant tree.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>      
+            </div>
+            <!-- card5 -->
+            <div class="card">
+                <i class="fas fa-solar-panel"></i>
+                <h3>Use Solar Energy</h3>
+                <p>Install solar panels to generate clean and renewable energy.</p>
+                <video id="video" width="320" height="240" controls>
+                    <source src="video/solarpanel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+            </div>
+            <!-- card6 -->
+            <div class="card">
+                <i class="fas fa-tint"></i>
+                <h3>Save Water</h3>
+                <p>Conserve water by fixing leaks and using water-saving appliances.</p>
+                <video id="video" width="320" height="240" controls>
+                    <source src="video/savewater.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                
+            </div>
+    </section>
+        
+    <footer id="footer" role="contentinfo"style="background-color: #28a745; color: white; padding: 10px 20px; text-align: center;margin-top: 50px;">
+        <p>&copy; 2025 Carbon Footprint. All rights reserved.</p>
+    </footer>
+    <script>
+        const videos=document.querySelectorAll("video");
+        videos.forEach(video =>{
+            video.play();
+        
+        video.addEventListener("ended",()=>{
+            video.play();});
+        });
+    </script>
+</body>
+</html>
