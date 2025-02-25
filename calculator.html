@@ -143,12 +143,23 @@
         }
 
         .result {
-            margin-top: 20px;
+         
+          
             font-size: 18px;
             color: #d5ecda;
             font-weight: bold;
             text-align: center;
         }
+        #myVideo {
+            position: cover;
+            top: 0;
+            left: 0;
+           margin-top: 70px;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -179,8 +190,43 @@
 
             .container {
                 margin: 20px;
-                padding: 20px;
+                padding: 50px;
+                margin-top: 50px;
             }
+            .container h2 {
+            font-size: 15px;
+            margin-bottom: 20px;
+            color: #e5ede5;
+            
+            text-align: center;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+            .result{
+                font-size: 13px;
+                padding: 50px;
+            }
+            .container button {
+          
+            padding: 7px;
+            background: #0b0d0b;
+            color: rgb(214, 226, 218);
+            border: none;
+            border-radius: 5px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .container button:hover {
+            background: #218838;
+        }
+
         }
     </style>
 </head>
@@ -248,8 +294,7 @@
             To reduce your carbon footprint, please visit the Recommendations page.`;
         }
     </script>
-    <footer id="footer" role="contentinfo"style="background-color: #28a745; color: white; padding: 10px 20px; text-align: center;margin-top: 580px;">
-        <p>&copy; 2025 Carbon Footprint. All rights reserved.</p>
-    </footer>
+     
+    
 </body>
 </html>
